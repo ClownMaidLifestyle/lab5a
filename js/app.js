@@ -101,11 +101,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    let stage1 = multiply(testArray[0],testArray[1]);
+    let stage2 = multiply(stage1[0],testArray[2]);
+    let sumarray = [stage2[0],"The numbers " + testArray[0]+","+testArray[1]+","+testArray[2]+" have a product of " + stage2[0] + "."];
+    return(sumarray);
 }
 
+
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
