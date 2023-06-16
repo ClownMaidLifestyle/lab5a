@@ -131,24 +131,30 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
-let total = [1,0];
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-for(let i=0;i<dynamicArray.length;i++){
+    let arraylength = dynamicArray.length;
+    let total = [1,"The numbers "];
+    let number1 = 0;
+    let number2 = 0;
+    let ArrayKiller = 0;
+    for(let i = 0; i<arraylength;i++){
+        number1 = total[0];
+        number2 = dynamicArray[i];
+        ArrayKiller = multiply(parseInt(number1),parseInt(number2));
+        total[0] = ArrayKiller[0];
 
-    total=multiply(total[0],dynamicArray[i]);
-}
-total[1] = " have a product of " + total[0];
-for(let j=0;j<dynamicArray.length;j++){
-    if(j=0){
-        total[1] = dynamicArray[j]+total[1];
+        if(i == 0){
+            total[1] = "" + total[1] + number2;
+        }
+        else{
+            total[1] = "" + total[1] + "," + number2;
+        }
     }
-    else{
-        total[1] = "," + dynamicArray[j] + total[1];
-    }
+    total[1] = "" + total[1] + " have a product of " + total[0] +".";
+    return(total);
 }
-return(total);
-}
+
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
